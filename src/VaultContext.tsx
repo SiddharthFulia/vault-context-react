@@ -68,6 +68,11 @@ export function VaultProvider({
   const lastUnlockedRef = useRef<boolean | null>(null);
   useEffect(() => {
     if (!ready) return;
+    if (lastUnlockedRef.current === null) {
+      // first ready tick — seed without firing so consumers only see real flips
+      lastUnlockedRef.current = unlocked;
+      return;
+    }
     if (lastUnlockedRef.current === unlocked) return;
     lastUnlockedRef.current = unlocked;
     onChangeRef.current?.({ unlocked, token });
