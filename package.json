@@ -1,0 +1,69 @@
+{
+  "name": "vault-context-react",
+  "version": "0.1.0",
+  "description": "Drop-in React auth context for token-based gated apps. Single source of truth for vault unlock state, globally-mounted login modal, cross-tab sync, and withVaultRetry() fetch wrapper that auto-retries 401s.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.lib.json && vite build --config vite.lib.config.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/user-event": "^14.5.1",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "jsdom": "^23.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.6.4",
+    "vitest": "^1.0.4"
+  },
+  "keywords": [
+    "react",
+    "auth",
+    "context",
+    "vault",
+    "jwt",
+    "401-retry",
+    "cross-tab",
+    "localStorage",
+    "fetch"
+  ],
+  "author": "Siddharth Fulia",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SiddharthFulia/vault-context-react"
+  },
+  "homepage": "https://github.com/SiddharthFulia/vault-context-react#readme",
+  "bugs": {
+    "url": "https://github.com/SiddharthFulia/vault-context-react/issues"
+  }
+}
